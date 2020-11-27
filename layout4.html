@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EXODEUX</title>
+        <meta charset="utf-8" />
+        <style> /*css*/
+        .float_left{
+                float: left;
+            }
+            .float_right{
+                float: right;
+            }
+        @import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
+        body{
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .one{
+            background-color: black;
+            color: white;
+            padding: 10px 2px;
+            position: sticky;
+            top:0;
+            left: 0; right: 0;
+        }
+        .one>h1{
+            margin: 20px;
+            font-size: 20px;
+        }
+        .one>nav>li{
+            float: left;
+            list-style: none;
+            padding: 0px 10px;
+            color: white;
+        }
+        .one ul{
+            margin: right;
+        }
+        .one a{
+            color: white;
+            text-decoration: none;
+            padding-left: 40px;
+        }
+        .float_right li{
+            float: right;
+            list-style: none;
+            padding: 10px;                
+        }
+        .float_right ul{
+            float: right;
+            padding: 0px 0px 0px 10px; 
+        }
+        .float_right a{
+            color: white;
+            text-decoration: none;
+            padding: 0px 40px;
+        }
+        .clear{
+            clear: both; /* 지우다 : 양쪽 */
+            height: 0px; /* 높이 : 0 */
+            overflow: hidden; /* 넘쳤을 때 : 숨김 */
+        }
+        body{
+            margin: -10px;
+            background-color: black;
+            color: white;
+        }
+        header{
+            background-color:black;
+            color: white; 
+            padding: 5px 2px; /* 상하 좌우 */
+            position: fixed;
+            left: 0; right: 0;
+            margin-top: 5px;
+        }
+        header>h1{
+            margin: 20px;
+            font-size: 20px;
+        }
+        header>h1>span:nth-child(1){
+            color: white;
+        }
+        header>h1>span:nth-child(2){
+            color: #b71717
+        }
+        header>nav li{
+            float: left;
+            list-style: none; /*목록-모습(동그라미) : 없음 */
+            padding: 0px 10px;  /*  바깥 여백 - 왼쪽 :10px  */
+            color: white;
+        }
+        header ul{
+            margin: 13px 0px;
+            font-size: 15px;
+        }
+        .clear{
+            clear: both; /* 지우다 : 양쪽 */
+            height: 0px; /* 높이 : 0 */
+            overflow: hidden; /* 넘쳤을 때 : 숨김 */
+        }
+
+        section{
+            text-align: center;
+        }
+        section h3{
+            color: #b71717;
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 50px 80px;
+        }
+        table, th, td {
+            border: 0px solid #bcbcbc;
+        }
+        table {
+            width: 100%;
+        }
+        footer{
+            background-color:black;
+            color: #ccc;
+
+            padding: 10px 30px;
+        }
+        footer>div>ul>li:nth-child(6){
+            border: none;
+        }
+        footer>ul>li{
+            float: left;
+            list-style: none;
+            padding: 0px 10px; /* 상하 좌우 */
+        }
+        #footer_left{
+            float: left;
+            margin: 25px 0px;
+        }
+        #footer_right{
+            float: right;
+            margin: 30px 0px;
+        }
+        footer{
+            background-color:none;
+            color:white;
+
+            padding: 0px 50px;
+        }
+        footer>div>ul>li{
+            float:left;
+            list-style: none;
+            padding: 10px 10px; /* 상하 좌우 */
+
+            border-right: solid 2px gray;
+        }
+        footer>div>ul>li:nth-child(6){
+            border: none;
+        }
+        footer>div>ul{
+            padding: 0px;
+        }
+        footer>ul>li{
+            float: left;
+            list-style: none;
+            padding: -10px 10px; /* 상하 좌우 */
+        }
+        footer>ul{
+            padding: 0px;
+        }
+        #footer_left{
+            float: left;
+        }
+        #footer_right{
+            float: right;
+        }
+        footer{
+            color: #ccc;
+            padding: 10px 20px;
+        }
+        #footer>div>ul>li:nth-child(6){
+            border: none;
+        }
+        #footer>ul>li{
+            float: left;
+            list-style: none;
+            padding: 0px 10px; /* 상하 좌우 */
+        }
+        #footer_left{
+            float: left;
+            margin: 20px 0px 0px;
+            font-size: 15px;
+        }
+        #footer_right{
+            float: right;
+            margin: 10px 0px 0px;
+        }
+        * {box-sizing:border-box} 
+        .mySlides {
+        display: none;
+        }
+    /* 하단의 점들 */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+            /* 마우스를 올리면 배경색을 변경 */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        /* 페이드 효과 */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+        
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+        </style>
+
+        <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+            body{
+                font-family:'PT Serif', serif;
+            }
+        .one{
+            font-style: bold;
+        }    
+        </style>
+    </head>
+
+    <body>
+    <header class="one">
+            <h1 class="float_left">INDEX</h1>
+            <nav class="float_right">
+                <ul>
+                    <a href="layout4.html"> <li>EXODEUX</li> </a>
+                    <a href="layout3.html"> <li>LAYOUT3</li> </a>
+                    <a href="layout2.html"> <li>LAYOUT2</li> </a>
+                    <a href="layout1.html"> <li>LAYOUT1</li> </a>
+                    <a href="index.html"> <li>INDEX</li> </a>
+                </ul>
+            </nav>
+            <div class="clear"></div>
+        </header>
+        <header>
+            <h1 class="float_left">
+                <!-- div span -->
+                <span>EXO</span><span>DEUX</span>
+            </h1>
+            <nav class="float_right">
+                <ul>
+                    <a href="index.html"><li>BACK</li></a>
+                    <a href="#target5"><li>REVIEW</li></a>
+                    <a href="#target4"><li>MUSIC VIDEO</li></a>
+                    <a href="#target3"><li>TEASER</li></a>
+                    <a href="#target2"><li>PROFILE</li></a>
+                    <a href="#target1"><li>WHO?</li></a>
+                    <div class="clear"></div>
+                </ul> 
+            </nav>
+        </header>
+        <div id="main_visual">
+        </div>
+        <section>
+        <div class="slideshow-container"></div>
+
+        <!-- 숫자와 캡션이 있는 이미지 -->
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/EXO-02.jpg" width="100%"></img>
+            <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="images/EXO3.jpg" width="100%"></img>
+            <div class="text"></div>
+        </div>
+        
+        
+        <!-- 현재 이미지를 알려주는 하단의 점 -->
+        <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span>  
+        </div>
+        <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // 다음, 이전 제어
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // 사진 제어
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1} 
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"; 
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block"; 
+        dots[slideIndex-1].className += " active";
+        }
+        </script>
+
+        <h3 id="target1">WHO?</h3>
+        <div class="space"></div>
+        <p>
+            의심스러운 존재들이 전 세계에서 발견되어
+            <br></br>
+            비정상적인 활동을 일으키고 있다.
+            <br></br>
+            많은 사람들이 붉은 기운을 발산하는 이러한 존재들이 
+            <br></br>
+            인간의 수준을 넘어 움직이고 현상을 만들어내는 것을 목격했다.
+            <br></br>
+            연구를 통해 이러한 이국적인 존재들이 총 6명ㅇ 있다는것이 확인 되었다.
+            <br></br>
+            그것들은 지금까지 오랫동안 추적되어 온 존재인 EXO와 형태가 비슷하다고 추적된다.
+            <br></br>
+            <br></br>
+            Questionable beings have been spotted around the globe,
+            <br></br>
+            causing abnormal activities.
+            <br></br>
+            It was witnessed b many that these beings, radiating red energy,
+            <br></br>
+            move and create phenomena beyond human level.
+            <br></br>
+            From researchm it has been confirmed there are a total of six of
+            these exotic beings.
+            <br></br>
+            They are assmed to be similar in form wuth EXO, a being that has
+            been tracked for long now. 
+        </p>
+        <h3 id="target2">PROFILE</h3>
+        <table>
+            <tbody>
+                <tr>
+                <td class="imagchange">
+                    <img src="images/kai.jpg" onmouseover='this.src="images/xkai.jpg"' onmouseout='this.src="images/kai.jpg"' width="300"></img>
+                    <div class="text">SUBJECT KAI<br></br>SUBJEXT NO 88<br></br>ID 14_01_94</div>
+                </td>
+                <td class="imagchange">
+                    <img src="images/chan.jpg" onmouseover='this.src="images/xchan.jpg"' onmouseout='this.src="images/chan.jpg"' width="300"></img>
+                    <div class="text">SUBJECT CHANYEOL<br></br>SUBJEXT NO 61<br></br>ID 27_11_92</div>
+                </td>
+                <td class="imagchange">
+                    <img src="images/se.jpg" onmouseover='this.src="images/xsehun.jpg"' onmouseout='this.src="images/se.jpg"' width="300"></img>
+                    <div class="text">SUBJECT SEHUN<br></br>SUBJEXT NO 94<br></br>ID 12_04_94</div>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+            <br></br>
+            <br></br>
+            <table>
+            <tbody>
+                <tr>
+                <td class="imagchange">
+                    <img src="images/baek.jpg" onmouseover='this.src="images/xbaekhyun.jpg"' onmouseout='this.src="images/baek.jpg"' width="300"></img>
+                    <div class="text">SUBJECT BAEKHYUN<br></br>SUBJEXT NO 04<br></br>ID 06_05_92</div>
+                </td>
+                <td class="imagchange">
+                    <img src="images/chen.jpg" onmouseover='this.src="images/xchen.jpg"' onmouseout='this.src="images/chen.jpg"' width="300"></img>
+                    <div class="text">SUBJECT CHEN<br></br>SUBJEXT NO 21<br></br>ID 21_09_92</div>
+                </td>
+                <td class="imagchange">
+                    <img src="images/suho.jpg" onmouseover='this.src="images/xsuho.jpg"' onmouseout='this.src="images/suho.jpg"' width="300"></img>
+                    <div class="text">SUBJECT SUHO<br></br>SUBJEXT NO 01<br></br>ID 22_05_91</div>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        <h3 id="target3">TEASER</h3>
+        <video width="1280x" height="720px" controls autoplay loop muted>
+            <source src="./media/Teaser.mp4" type="video/mp4"/>
+        </video>
+        <h3 id="target4">MUSIC VIDEO</h3>
+        <video width="1280x" height="720px" controls autoplay loop muted>
+            <source src="./media/MV.mp4" type="video/mp4"/>
+        </video>
+        <div class="space"></div>
+
+        <h3 id="target5">REVIEW</h3>
+        <div class="space"></div>
+         제가 생각했던 것과 비슷하게 나와 뿌듯하기도 하고
+        <br></br>
+        만족스러운 결과물 인 것 같습니다.
+        <br></br>
+        기말평가를 준비 하면서도 제가 하고싶은 주제로 할 수 있다는 것에 대해서
+        <br></br>
+        기분 좋은 마음으로 준비 했던 것 같습니다.
+        <br></br>
+        감사합니다.
+        </section>
+        <a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" title=”맨위로><img src="images/icon.png" width="50px" height="50px"></img></a>
+
+    </body>
+
+    <footer>
+            <div id="footer_left">
+                <div>OBSESSION - The 6th Album</div>
+                <div>2019 EXO comeback promotion.</div>
+                <div class="clear"></div>
+            </div>
+            <ul id="footer_right"> <!-- 오른편 상자 역할 -->
+                <li><img src="images/smtown.png"width="50"></img></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+    </footer>
+    <footer class="fotter">
+        <div id="footer_left">
+            <div>Kaywon University of Art and Design</div>
+            <div>Digital Media Design Content programming</div>
+            <div class="clear"></div>
+        </div>
+        <ul id="footer_right"> <!-- 오른편 상자 역할 -->
+            <li><img src="images/footer_logo.png"width="50"></img></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+</footer>
+</html>

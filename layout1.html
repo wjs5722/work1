@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout1</title>
+        <meta charset="utf-8" />
+        <style>
+            body{
+            margin: 0px;
+            color: black;
+            }
+            .one{
+                background-color: black;
+                color: white;
+                padding: 0px 2px;
+                position: sticky;
+                top:0;
+                left: 0; right: 0;
+            }
+            .one>h1{
+                margin: 5px;
+            }
+            .one>nav>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px;
+                color: white;
+            }
+            .one ul{
+                margin: right;
+                font-size: 19px;
+            }
+            .one a{
+                color: white;
+                text-decoration: none;
+                padding-left: 40px;
+            }
+            .float_right li{
+                float: right;
+                list-style: none;
+                padding: 10px;                
+            }
+            .float_left ul{
+                float: left;
+                padding: 0px 0px 0px 10px; 
+                font-size: 20px;
+            }
+            .float_right a{
+                color: white;
+                text-decoration: none;
+                padding: 0px 40px;
+            }
+            header{
+                padding: 10px 50px; /* 상하 좌우 */
+                padding-top: 40px;
+            }
+            header>ul>li{
+                float: left; /* 둥둥떠다니게 : 왼쪽기준 */
+                list-style: none; /*목록-모습(동그라미) : 없음 */
+                padding-left: 10px;  /*  바깥 여백 - 왼쪽 :10px  */
+                padding-right: 10px; /*  바깥 여백 - 오른쪽 :10px  */
+                border-right: solid 1px gray; /*  경계선 - 오른쪽 : 실선 1px 두께 회색 */
+            }
+            header>ul>li:nth-child(5){
+                border: none;  /* 경계선 없음  */
+            }
+            header>ul{
+                margin: 14px;
+            }
+            #zoom{
+                margin: 14px;
+            }
+            header>h1{
+                margin: 0px;
+            }
+            .clear{
+                clear: both; /* 지우다 : 양쪽 */
+                height: 0px; /* 높이 : 0 */
+                overflow: hidden; /* 넘쳤을 때 : 숨김 */
+            }
+            .float_left {float: left;}
+            .float_right {float: right;}
+            nav li{
+                float: left;
+                list-style: none;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            nav>h2{
+                margin: 0px;
+            }
+            nav>ul{
+                margin: 8px;
+            }
+            .nav02{
+                background-color: gainsboro;
+                padding: 10px 50px
+            }
+            #content>div:nth-child(1){
+                background-color: #98f;
+            }
+            #content>div:nth-child(2){
+                background-color: #5d9;
+            }
+            #content>div:nth-child(3){
+                background-color: #f76;
+            }
+            #content>div:nth-child(4){
+                background-color: #ec5;
+            }
+            .content_part{
+                float: left;
+                width: 480px;
+                margin: 15px;
+            }
+            #content h3{
+                color: white;
+            }
+            #content dt{
+                font-weight: bold; /* 글씨-두께 : 두껍게*/
+            }
+            .content_part dd{
+                margin: 0px;
+            }
+            #content section{
+                width: 1020px;
+                margin-left: 180px; /* 고정값 */
+                margin-left: auto; /* 가변값 */
+                margin-right: auto;
+
+                padding: 50px 0px; /* 상하 좌우 */
+            }
+            footer{
+                background-color: #555;
+                color: #ccc;
+
+                padding: 10px 50px;
+            }
+            footer>div>ul>li{
+                float:left;
+                list-style: none;
+                padding: 0px 10px; /* 상하 좌우 */
+
+                border-right: solid 2px gray;
+            }
+            footer>div>ul>li:nth-child(6){
+                border: none;
+            }
+            footer>div>ul{
+                padding: 0px;
+            }
+            footer>ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px; /* 상하 좌우 */
+            }
+            footer>ul{
+                padding: 0px;
+            }
+            #footer_left{
+                float: left;
+            }
+            #footer_right{
+                float: right;
+            }
+            #wrap{
+               /* width: 1200px;*/ /* 고정값 */
+               min-width: 1100px; /*  최소 넓이 */
+               max-width: 1920px; /* 최대 넓이 */
+               margin-left: auto;
+               margin-right: auto;
+            }
+            body{
+                margin: 0px;
+            }
+        </style>
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+                .one{
+                    font-family:'PT Serif', serif;
+                }
+            .one{
+                font-style: bold;
+            }    
+        </style>
+    </head>
+    <body>
+        <header class="one">
+            <h1 class="float_left">INDEX</h1>
+            <nav class="float_right">
+                <ul>
+                    <a href="layout4.html"> <li>EXODEUX</li> </a>
+                    <a href="layout3.html"> <li>LAYOUT3</li> </a>
+                    <a href="layout2.html"> <li>LAYOUT2</li> </a>
+                    <a href="layout1.html"> <li>LAYOUT1</li> </a>
+                    <a href="index.html"> <li>INDEX</li> </a>
+                </ul>
+            </nav>
+            <div class="clear"></div>
+        </header>
+        <div id="wrap">
+            <header>
+                <h1 class="float_left">
+                    <img src="layout1_head_logo.jpg" />
+                </h1>
+                <ul class="float_left">
+                    <li>ABOUT</li>
+                    <li>SERVICES</li>
+                    <li>WORKS</li>
+                    <li>BLOG</li>
+                    <li>CONTACT US</li>
+                    <div class="clear"></div> <!-- float left 해제 -->
+                </ul>
+                <div id="zoom" class="float_right">
+                    <img src="layout1_head_zoom.jpg" />
+                </div>
+                <div class="clear"></div> <!-- float left 해제 -->
+            </header>
+            <nav class="nav02">
+                <h2 class="float_left">See Our Works</h2>
+                <ul class="float_right">
+                    <li>Web Design</li>
+                    <li>Icons</li>
+                    <li>Illustlations</li>
+                    <li>Misc</li>
+                    <div class="clear"> </div> <!-- float left 해제 -->
+                </ul>
+                <div class="clear"> </div> <!-- float left 해제 -->
+            </nav>
+            <div id="content">
+                <div>
+                    <section>
+                         <!-- 파란 박스 부분 -->
+                         <h3>Web Design</h3>
+                         <div class="content_part">
+                             <!-- 왼편 부분 -->
+                             <img src="cute3.jpg" width="480px" />
+                             <dl>
+                                 <dt>CUTE</dt>
+                                 <dd>SO....CUTE SO....CUTE SO....CUTE
+                                        SO....CUTE SO....CUTE SO....CUTE
+                                 </dd>
+                             </dl>
+                         </div>
+                         <div class="content_part">
+                                <!-- 오른편 부분 -->
+                                <img src="cute3.jpg" width="480px"/>
+                                <dl>
+                                    <dt>CUTE</dt>
+                                    <dd>SO....CUTE SO....CUTE SO....CUTE
+                                           SO....CUTE SO....CUTE SO....CUTE
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="clear"></div> <!-- float left 해제 -->
+                    </section>
+                </div>
+            <div>
+                    <section>
+                            <!-- 파란 박스 부분 -->
+                            <h3>Web Design</h3>
+                            <div class="content_part">
+                                <!-- 왼편 부분 -->
+                                <img src="cute3.jpg" width="480px"/>
+                                <dl>
+                                    <dt>CUTE</dt>
+                                    <dd>SO....CUTE SO....CUTE SO....CUTE
+                                        SO....CUTE SO....CUTE SO....CUTE
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="content_part">
+                                <!-- 오른편 부분 -->
+                                <img src="cute3.jpg" width="480px"/>
+                                <dl>
+                                    <dt>CUTE</dt>
+                                    <dd>SO....CUTE SO....CUTE SO....CUTE
+                                            SO....CUTE SO....CUTE SO....CUTE
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="clear"></div> <!-- float left 해제 -->
+                    </section>
+                </div>
+            <div>
+                    <section>
+                            <!-- 파란 박스 부분 -->
+                            <h3>Web Design</h3>
+                            <div class="content_part">
+                                <!-- 왼편 부분 -->
+                                <img src="cute3.jpg" width="480px"/>
+                                <dl>
+                                    <dt>CUTE</dt>
+                                    <dd>SO....CUTE SO....CUTE SO....CUTE
+                                        SO....CUTE SO....CUTE SO....CUTE
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="content_part">
+                                <!-- 오른편 부분 -->
+                                <img src="cute3.jpg" width="480px"/>
+                                <dl>
+                                    <dt>CUTE</dt>
+                                    <dd>SO....CUTE SO....CUTE SO....CUTE
+                                            SO....CUTE SO....CUTE SO....CUTE
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="clear"></div> <!-- float left 해제 -->
+                    </section>
+                </div>
+            <div>
+                <section>
+                        <!-- 파란 박스 부분 -->
+                        <h3>Web Design</h3>
+                        <div class="content_part">
+                                <!-- 왼편 부분 -->
+                            <img src="cute3.jpg" width="480px"/>
+                            <dl>
+                                <dt>CUTE</dt>
+                                <dd>SO....CUTE SO....CUTE SO....CUTE
+                                        SO....CUTE SO....CUTE SO....CUTE
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="content_part">
+                                <!-- 오른편 부분 -->
+                            <img src="cute3.jpg" width="480px"/>
+                            <dl>
+                                <dt>CUTE</dt>
+                                <dd>SO....CUTE SO....CUTE SO....CUTE
+                                            SO....CUTE SO....CUTE SO....CUTE
+                                </dd>
+                             </dl>
+                         </div>
+                        <div class="clear"></div> <!-- float left 해제 -->
+                </section>
+            </div>
+        </div>
+        <footer>
+            <div id="footer_left">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Work</li>
+                    <li>Blog</li>
+                    <li>Contact us</li>
+                    <div class="clear"></div>
+                </ul>
+                <div>ⓒ 2013 BlueBox. All Right Reserved.</div>
+                <div>the loges in the design are the property 
+                     of their respective owners/copyright 
+                     holders.
+                </div>
+            </div>
+            <ul id="footer_right"> <!-- 오른편 상자 역할 -->
+                <li><img src="images/layout1_footer_icon1.png"></li></img>
+                <li><img src="images/layout1_footer_icon2.png"></li></img>
+                <li><img src="images/layout1_footer_icon3.png"></li></img>
+                <li><img src="images/layout1_footer_icon4.png"></li></img>
+                <li><img src="images/layout1_footer_icon5.png"></li></img>
+                <li><img src="images/layout1_footer_icon6.png"></li></img>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+        </footer>
+        <footer>
+                <div id="footer_left">
+                    <div>Kaywon University of Art and Design</div>
+                    <div>Digital Media Design Content programming</div>
+                    <div class="clear"></div>
+                </div>
+                <ul id="footer_right"> <!-- 오른편 상자 역할 -->
+                    <li><img src="images/footer_logo.png"width="70"></li></img>
+                    <div class="clear"></div>
+                </ul>
+                <div class="clear"></div>
+        </footer>
+        </div>
+    </body>
+</html>

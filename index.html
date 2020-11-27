@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>콘텐츠 프로그래밍 사이트</title>
+        <meta charset="utf-8" />
+        <!-- utf-8, euc-kr -->
+        <meta name="author" content="전화영" />
+        <meta name="keywords" content="계원, 콘텐츠 프로그래밍, 디지털미디어" />
+    </head>
+
+    <style>
+    body{
+        margin: 0px;
+        color: white;
+    }
+    header{
+        color: white; 
+        padding: 20px 50px; /* 상하 좌우 */
+        left: 0; right: 0;
+        background-color: black;
+        font-size: 16px;
+    }   
+    header>nav li{
+        float: left;
+        list-style: none; /*목록-모습(동그라미) : 없음 */
+        padding: 0px 10px;  /*  바깥 여백 - 왼쪽 :10px  */
+        color: white;
+    }
+    header>nav ul{
+        margin: -10px -20px;
+    }
+    header>h1{
+        margin: -18px -20px;
+        font-size:23px;
+    }
+    .clear{
+        clear: both; /* 지우다 : 양쪽 */
+        height: 0px; /* 높이 : 0 */
+        overflow: hidden; /* 넘쳤을 때 : 숨김 */
+    }
+    .float_left{
+        float: left;
+    }
+    .float_right{
+        float: right;
+    }
+    footer{
+        color: #ccc;
+        padding: 10px 30px;
+    }
+    footer>div>ul>li:nth-child(6){
+        border: none;
+    }
+    footer>ul>li{
+        float: left;
+        list-style: none;
+        padding: 0px 10px; /* 상하 좌우 */
+    }
+    #footer_left{
+        float: left;
+        margin: 540px 0px 0px;
+        font-size: 10px;
+    }
+    #footer_right{
+        float: right;
+        margin: 560px 0px 0px;
+    }
+    body{
+        font-size: 20px;
+        font-weight: bolder;
+        background-image: url("images/EXO3.jpg");
+        background-size: cover;
+    }
+    </style>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+            body{
+                font-family:'PT Serif', serif;
+            }
+    </style>
+    <body class="background">
+    <header>
+        <h1 class="float_left">INDEX</h1>
+    <nav class="float_right">
+    <ul>
+        <a href="index.html"> <li>INDEX</li> </a>
+        <a href="layout1.html"> <li>LAYOUT1</li> </a>
+        <a href="layout2.html"> <li>LAYOUT2</li> </a>
+        <a href="layout3.html"> <li>LAYOUT3</li> </a>
+        <a href="layout4.html"> <li>EXODEUX</li> </a>
+    </ul>
+    </header>
+    <div id="main_visual"></div>
+    </body>
+    
+    <footer>
+            <div id="footer_left">
+                <div>Kaywon University of Art and Design</div>
+                <div>Digital Media Design Content programming</div>
+                <div class="clear"></div>
+            </div>
+            <ul id="footer_right"> <!-- 오른편 상자 역할 -->
+                <li><img src="images/footer_logo.png"width="70"></img></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+    </footer>
+</html>
